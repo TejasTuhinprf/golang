@@ -65,6 +65,7 @@ The methods utilized in this cache library include : Set, Get, Delete
 **Set** 
 Stores a value in the cache with a specified time-to-live (TTL).
 _usage:_
+
 func (c *LRUCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
 func (c *RedisCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
 func (c *MultiBackendCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
@@ -79,6 +80,7 @@ Returns: An error if something goes wrong while setting the value.
 **Get** 
 Retrieves a value from the cache based on the provided key.
 _usage:_ 
+
 func (c *LRUCache) Get(ctx context.Context, key string) (interface{}, error)
 func (c *RedisCache) Get(ctx context.Context, key string) (interface{}, error)
 func (c *MultiBackendCache) Get(ctx context.Context, key string) (interface{}, error)
@@ -89,7 +91,9 @@ Returns: The cached value and an error if the value is not found or some error o
 
 **Delete** 
 Removes a value from the cache based on the provided key.
-_usage:_ 
+
+_usage:_
+
 func (c *LRUCache) Delete(ctx context.Context, key string) error
 func (c *RedisCache) Delete(ctx context.Context, key string) error
 func (c *MultiBackendCache) Delete(ctx context.Context, key string) error
@@ -111,3 +115,5 @@ Set Operation: 41,498 ns/op
 Get Operation: 38,066 ns/op
 Delete Operation: 36,725 ns/op
 
+**Interaction Diagram:**
+![image](https://github.com/TejasTuhinprf/golang/assets/139322747/c8f55c8c-1bff-4c2e-ae39-6dabb28aea41)
