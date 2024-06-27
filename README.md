@@ -100,7 +100,9 @@ Removes a value from the cache based on the provided key.
 _usage:_
 
 func (c *LRUCache) Delete(ctx context.Context, key string) error
+
 func (c *RedisCache) Delete(ctx context.Context, key string) error
+
 func (c *MultiBackendCache) Delete(ctx context.Context, key string) error
 
 Parameters utilized in Delete:
