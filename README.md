@@ -63,12 +63,16 @@ The library defines a Cache interface and provides implementations for in-memory
 The methods utilized in this cache library include : Set, Get, Delete
 
 **Set** 
-Stores a value in the cache with a specified time-to-live (TTL).
+Stores a value in the cache with a specified time-to-live (TTL). 
+
 _usage:_
 
-func (c *LRUCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
+func (c *LRUCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error 
+
 func (c *RedisCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
+
 func (c *MultiBackendCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
+
 
 Parameters utilized in Set: 
 ctx context.Context: Context for controlling cancellation or timeouts
@@ -78,7 +82,8 @@ ttl time.Duration: The duration for which the cache entry should remain valid an
 Returns: An error if something goes wrong while setting the value.
 
 **Get** 
-Retrieves a value from the cache based on the provided key.
+Retrieves a value from the cache based on the provided key. 
+
 _usage:_ 
 
 func (c *LRUCache) Get(ctx context.Context, key string) (interface{}, error)
