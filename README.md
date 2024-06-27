@@ -59,34 +59,26 @@ func main() {
 **API Documentation**
 The library defines a Cache interface and provides implementations for in-memory and Redis backends. The primary API consists of three methods: Set, Get, and Delete.
 
-Cache Interface:
-type Cache interface {
-    Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
-    Get(ctx context.Context, key string) (interface{}, error)
-    Delete(ctx context.Context, key string) error
-}
 **Methods**
 The methods utilized in this cache library include : Set, Get, Delete
 
-Set
+**Set** 
 Stores a value in the cache with a specified time-to-live (TTL).
 _usage:_
-
 func (c *LRUCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
 func (c *RedisCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
 func (c *MultiBackendCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
 
-Parameters utilized in Set:
+Parameters utilized in Set: 
 ctx context.Context: Context for controlling cancellation or timeouts
 key string: The unique identifier for the cache entry.
 value interface{}: The value to be stored.
 ttl time.Duration: The duration for which the cache entry should remain valid and usable.
 Returns: An error if something goes wrong while setting the value.
 
-Get
+**Get** 
 Retrieves a value from the cache based on the provided key.
-_usage:_
-
+_usage:_ 
 func (c *LRUCache) Get(ctx context.Context, key string) (interface{}, error)
 func (c *RedisCache) Get(ctx context.Context, key string) (interface{}, error)
 func (c *MultiBackendCache) Get(ctx context.Context, key string) (interface{}, error)
@@ -95,10 +87,9 @@ Parameters utlized in Get:
 [functionality Same as above]
 Returns: The cached value and an error if the value is not found or some error occurs.
 
-Delete
+**Delete** 
 Removes a value from the cache based on the provided key.
-_usage:_
-
+_usage:_ 
 func (c *LRUCache) Delete(ctx context.Context, key string) error
 func (c *RedisCache) Delete(ctx context.Context, key string) error
 func (c *MultiBackendCache) Delete(ctx context.Context, key string) error
@@ -111,17 +102,12 @@ Returns: An error if something goes wrong while deleting the value.
 In-Memory Cache Performance:
 
 Set Operation: 1,262 ns/op
-
 Get Operation: 3,431 ns/op
-
 Delete Operation: 5,082 ns/op 
-
 
 Redis Cache Performance:
 
 Set Operation: 41,498 ns/op
-
 Get Operation: 38,066 ns/op
-
 Delete Operation: 36,725 ns/op
 
