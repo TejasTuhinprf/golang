@@ -71,8 +71,11 @@ The methods utilized in this cache library include : Set, Get, Delete
 Set
 Stores a value in the cache with a specified time-to-live (TTL).
 _usage:_
+
 func (c *LRUCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
+
 func (c *RedisCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
+
 func (c *MultiBackendCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
 
 Parameters utilized in Set:
@@ -85,8 +88,11 @@ Returns: An error if something goes wrong while setting the value.
 Get
 Retrieves a value from the cache based on the provided key.
 _usage:_
+
 func (c *LRUCache) Get(ctx context.Context, key string) (interface{}, error)
+
 func (c *RedisCache) Get(ctx context.Context, key string) (interface{}, error)
+
 func (c *MultiBackendCache) Get(ctx context.Context, key string) (interface{}, error)
 
 Parameters utlized in Get:
@@ -96,8 +102,11 @@ Returns: The cached value and an error if the value is not found or some error o
 Delete
 Removes a value from the cache based on the provided key.
 _usage:_
+
 func (c *LRUCache) Delete(ctx context.Context, key string) error
+
 func (c *RedisCache) Delete(ctx context.Context, key string) error
+
 func (c *MultiBackendCache) Delete(ctx context.Context, key string) error
 
 Parameters utilized in Delete:
@@ -108,12 +117,17 @@ Returns: An error if something goes wrong while deleting the value.
 In-Memory Cache Performance:
 
 Set Operation: 1,262 ns/op
+
 Get Operation: 3,431 ns/op
+
 Delete Operation: 5,082 ns/op 
+
 
 Redis Cache Performance:
 
 Set Operation: 41,498 ns/op
+
 Get Operation: 38,066 ns/op
+
 Delete Operation: 36,725 ns/op
 
