@@ -73,9 +73,7 @@ Stores a value in the cache with a specified time-to-live (TTL).
 _usage:_
 
 func (c *LRUCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
-
 func (c *RedisCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
-
 func (c *MultiBackendCache) Set(ctx context.Context, key string, value interface{}, ttl time.Duration) error
 
 Parameters utilized in Set:
@@ -90,9 +88,7 @@ Retrieves a value from the cache based on the provided key.
 _usage:_
 
 func (c *LRUCache) Get(ctx context.Context, key string) (interface{}, error)
-
 func (c *RedisCache) Get(ctx context.Context, key string) (interface{}, error)
-
 func (c *MultiBackendCache) Get(ctx context.Context, key string) (interface{}, error)
 
 Parameters utlized in Get:
@@ -104,9 +100,7 @@ Removes a value from the cache based on the provided key.
 _usage:_
 
 func (c *LRUCache) Delete(ctx context.Context, key string) error
-
 func (c *RedisCache) Delete(ctx context.Context, key string) error
-
 func (c *MultiBackendCache) Delete(ctx context.Context, key string) error
 
 Parameters utilized in Delete:
